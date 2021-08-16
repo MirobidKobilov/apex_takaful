@@ -1,0 +1,55 @@
+.bg-img {
+    background-image: linear-gradient(to bottom, rgba(3, 57, 83, .8), rgba(3, 57, 83, .8)), url('../../images/static_bg_1.jpg');
+    background-repeat: no-repeat;
+    background-position: center right;
+    text-align: center;
+    height: 260px;
+}
+
+.bg-img h1 {
+    padding-top: 120px;
+    font-size: 36px;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Open Sans";
+}
+
+.bg-img ol {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    justify-content: center;
+    color: #fff;
+    display: flex;
+    list-style-type: none;
+}
+
+.bg-img ol li a{
+    display: inline-block;
+    position: relative;
+    margin: 5px 10px;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.bg-img ol li span{
+    display: inline-block;
+    position: relative;
+    margin: 5px 10px;
+    font-size: 16px;
+    color: #c7c7c7;
+}
+
+.bg-img ol li a::after {
+    position: absolute;
+    content: "-";
+    right: -15px;
+    top: 0;
+}
+
+.static-text p {
+    margin: 0 8px;
+}

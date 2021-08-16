@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"less.compile": {
+			"compress": true,
+			"main": ["${workspaceRoot}/resources/less/style.less"],
+			"out": "${workspaceRoot}/public/frontend/assets/styles/css/style.css"
+		},
+		"compile-hero.disable-compile-files-on-did-save-code": true,
+	}
+}
