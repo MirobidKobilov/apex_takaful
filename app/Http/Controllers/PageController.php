@@ -17,6 +17,7 @@ use App\Models\Application;
 use App\Models\Feature;
 use App\Models\Gallery;
 use App\Models\Partner;
+use DB;
 use App\Models\Branch;
 class PageController extends Controller
 {
@@ -73,8 +74,8 @@ class PageController extends Controller
     public function contact()
     {
         $branches = Branch::all();
-        //  return $branches;
-        return view('frontend.pages.contact', compact('branches'));
+        $coordinates = Branch::select('coordinate')->get();
+        return view('frontend.pages.contact', compact('branches', 'coordinates'));
     }
 
     public function branch() {

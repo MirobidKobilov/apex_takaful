@@ -37,7 +37,7 @@
                 <h2>{{$article->title}}</h2>
                 <p class="mb-4">{{ $article->short_text }}</p>
                 <div class="d-flex">
-                    <img src="{{'/storage/'.$article->img}}" alt="" width="40%" style="border-radius: 5px;">
+                    <img class="product-img" src="{{'/storage/'.$article->img}}" alt="" width="40%" style="border-radius: 5px;">
                     
                     <div style="margin-left: 24px">
                         <p>{!! $article->text !!}</p>

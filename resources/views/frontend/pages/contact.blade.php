@@ -74,7 +74,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="accordion contact-accordion" id="accordionExample">
+                    <div class="accordion contact-accordion" id="accordionExample" data-coor="{{$coordinates}}">
                         @foreach ($branches as $item)
                             <div class="accordion-item" data-lat="{{$item->lat()}}" data-long="{{$item->long()}}" data-id="{{$item->id}}">
                                 <h2 class="accordion-header" id="headingOne">
@@ -124,7 +124,28 @@
 
 @section('script')
 <script>
+    $( document ).ready(function() {
+        let lat = $('.accordion-item').data('lat')
+        let long = $('.accordion-item').data('long')
+        let coor = $('#accordionExample').data('coor')
+        ymaps.ready(function() {
+            let map = new ymaps.Map("map-render", {
+                center: [41.311153, 69.279729],
+                zoom: 11
+            })
+            if (map) {
+                ymaps.modules.require(['Placemark', 'Circle'], function (Placemark, Circle) {
+                    const coorArray = Array.from(coor).map(cor => cor.coordinate.split(', '))
+                    coorArray.forEach(pointer => {
+                        let placemark = new Placemark(pointer);
+                        map.geoObjects.add(placemark);
+                    })
+                });
+            }
+        });
+    });
     $(function(){
+        
         $('.map-btn').on('click', function(){
             let lat = $(this).parents('.accordion-item').data('lat')
             let long = $(this).parents('.accordion-item').data('long')
@@ -148,5 +169,6 @@
             });
         })
     })
+    
 </script>
 @endsection

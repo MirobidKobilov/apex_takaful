@@ -385,45 +385,6 @@
 
     <!-- slick arguments -->
     <script>
-        $('.hero-slider').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            pauseOnHover: false,
-            arrows: false,
-            cssEase: 'ease-in',
-            fade: true,
-            dots: true,
-        });
-        $('.clients-slider').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            fade: false,
-            centerMode: true,
-            centerPadding: '60px',
-            dots: true,
-        });
-        $('.staff-slider').slick({
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            pauseOnHover: false,
-            arrows: false,
-            fade: false,
-            dots: true,
-        });
-        $('.partners-slider').slick({
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            pauseOnHover: false,
-            arrows: false,
-            fade: false,
-            dots: true,
-            autoplay: true,
-            autoplaySpeed: 1500,
-        });
-
         window.onscroll = function () { myFunction() };
         var navbar = document.getElementById("navbar");
         var sticky = navbar.offsetTop + 35;
