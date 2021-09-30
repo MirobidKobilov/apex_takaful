@@ -36,15 +36,6 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                {{-- <div class="form-group row">
-                                    <div class="col-md-12">
-                                        <label for="title_ru" class="col-form-label form-control-label">Заголовок</label>
-                                        <input class="form-control" type="text" id="title_ru" name="title_ru" value="{{ empty($features) ? old('title_ru') : $features->{'title_ru'} }}">
-                                        @error('title_ru')
-                                            <div class="alert-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div> --}}
                                 <div class="form-group row">
                                     <div class="col-md-12">
                                         <label for="short_text_ru" class="col-form-label form-control-label">Краткий текст</label>
@@ -54,26 +45,8 @@
                                         @enderror
                                     </div>
                                 </div>
-                                {{-- <div class="form-group row">
-                                    <div class="col-md-12">
-                                        <label for="description_ru" class="col-form-label form-control-label">Описание</label>
-                                        <textarea type="text" class="form-control js-selector" id="description_ru" name="description_ru">{{ empty($features) ? old('description_ru') : $features->{'description_ru'} }}</textarea>
-                                        @error('description_ru')
-                                            <div class="alert-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div> --}}
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                {{-- <div class="form-group row">
-                                    <div class="col-md-12">
-                                        <label for="title_uz" class="col-form-label form-control-label">Заголовок</label>
-                                        <input class="form-control" type="text" id="title_uz" name="title_uz" value="{{ empty($features) ? old('title_uz') : $features->{'title_uz'} }}">
-                                        @error('title_uz')
-                                            <div class="alert-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div> --}}
                                 <div class="form-group row">
                                     <div class="col-md-12">
                                         <label for="short_text_uz" class="col-form-label form-control-label">Краткий текст</label>
@@ -83,26 +56,8 @@
                                         @enderror
                                     </div>
                                 </div>
-                                {{-- <div class="form-group row">
-                                    <div class="col-md-12">
-                                        <label for="description_uz" class="col-form-label form-control-label">Описание</label>
-                                        <textarea class="form-control js-selector" type="text" id="description_uz" name="description_uz">{{ empty($features) ? old('description_uz') : $features->{'description_uz'} }}</textarea>
-                                        @error('description_uz')
-                                            <div class="alert-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div> --}}
-                            </div>                            
+                            </div>
                             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                {{-- <div class="form-group row">
-                                    <div class="col-md-12">
-                                        <label for="title_en" class="col-form-label form-control-label">Заголовок</label>
-                                        <input class="form-control" type="text" id="title_en" name="title_en" value="{{ empty($features) ? old('title_en') : $features->{'title_en'} }}">
-                                        @error('title_en')
-                                            <div class="alert-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div> --}}
                                 <div class="form-group row">
                                     <div class="col-md-12">
                                         <label for="short_text_en" class="col-form-label form-control-label">Краткий текст</label>
@@ -112,16 +67,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                {{-- <div class="form-group row">
-                                    <div class="col-md-12">
-                                        <label for="description_en" class="col-form-label form-control-label">Описание</label>
-                                        <textarea class="form-control js-selector" type="text" id="description_en" name="description_en">{{ empty($features) ? old('description_en') : $features->{'description_en'} }}</textarea>
-                                        @error('description_en')
-                                            <div class="alert-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div> --}}
-                            </div> 
+                            </div>
                             <div class="form-group row">
                                 <div class="col-md-4">
                                     <label for="icon" class="col-form-label form-control-label">Иконка</label>
@@ -137,7 +83,7 @@
                                         <div class="alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                            </div>                           
+                            </div>
                         </div>
                         <div class="p-4 text-right">
                             <a href="{{ route('backend.features.show') }}" class="btn btn-secondary" data-dismiss="modal">Отменить</a>

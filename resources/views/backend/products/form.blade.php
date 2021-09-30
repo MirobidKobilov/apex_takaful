@@ -11,7 +11,6 @@
             </nav>
         </div>
     </div>
-    {{-- {{ dd($errors->all()) }} --}}
     <!-- Table -->
     <div class="row">
         <div class="col">
@@ -20,7 +19,6 @@
                 <div class="card-header">
                     <h3 class="mb-0 h2">ПРОДУКТЫ</h3>
                 </div>
-                {{-- {{dd($errors->all())}} --}}
                 <form class="pt-4" action="{{ route('backend.products.postform', ['id' => $id]) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="container">
@@ -94,7 +92,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>
                             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                 <div class="form-group row">
                                     <div class="col-md-12">
@@ -123,7 +121,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="form-group row">
                                 <div class="col-md-4">
                                     <label for="type" class="col-form-label form-control-label">Тип</label>
@@ -136,7 +134,7 @@
                                     <label for="img" class="col-form-label form-control-label">Изоброжение</label>
                                     <input class="form-control" type="file" id="img" name="img">
                                 </div>
-                            </div>                           
+                            </div>
                         </div>
                         <div class="p-4 text-right">
                             <a href="{{ route('backend.products.show') }}" class="btn btn-secondary" data-dismiss="modal">Отменить</a>

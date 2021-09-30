@@ -60,7 +60,6 @@
             </div>
             <div class="modal-body">
                 <form action="" id="form" method="POST" enctype="multipart/form-data">
-                    {{-- @csrf --}}
                     <input type="hidden" name="id">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
@@ -101,7 +100,7 @@
                                     <input class="form-control" type="text" id="adress_uz" name="adress_uz">
                                 </div>
                             </div>
-                        </div>                            
+                        </div>
                         <div class="tab-pane fade" id="en" role="tabpanel" aria-labelledby="en-tab">
                             <div class="form-group row">
                                 <div class="col-md-12">
@@ -143,7 +142,7 @@
 @section('script')
 <script src="{{asset('backend/assets/vendor/datatables.net/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('backend/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('backend/assets/js/crud.js')}}"></script> 
+<script src="{{asset('backend/assets/js/crud.js')}}"></script>
 <script>
   var crud = new Crud({
     filter: true,
@@ -153,7 +152,7 @@
 
     list: {
       url: "{{route('backend.branches.data')}}",
-      datatable: {            
+      datatable: {
         columns: [
           {data: 'id', name: 'id'},
           {data: 'title_ru', name: 'title_ru'}
@@ -162,7 +161,7 @@
             {
                 targets: 2,
                 data: null,
-                searchable:false, 
+                searchable:false,
                 render: function (row, type, val, meta) {
                     return '<div class="text-right">' +
                     crud.makeButton(val, 'btn-default btn-edit', '<i class="fa fa-pen"></i>', [

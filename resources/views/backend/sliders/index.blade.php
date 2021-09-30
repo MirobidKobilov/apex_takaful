@@ -61,7 +61,6 @@
             </div>
             <div class="modal-body">
                 <form action="" id="form" method="POST" enctype="multipart/form-data">
-                    {{-- @csrf --}}
                     <input type="hidden" name="id">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
@@ -78,11 +77,11 @@
                         <div class="tab-pane fade show active" id="ru" role="tabpanel" aria-labelledby="ru-tab">
                             <div class="form-group row">
                                 <div class="col-md-12">
-                                    <label for="title_ru" class="col-form-label form-control-label">Заголовок (RU)</label>
+                                    <label for="title_ru" class="col-form-label form-control-label d-block">Заголовок (RU)</label>
                                     <input class="form-control" type="text" id="title_ru" name="title_ru">
-                                    <label for="short_text_ru" class="col-form-label form-control-label">Краткий текст (RU)</label>
+                                    <label for="short_text_ru" class="col-form-label form-control-label d-block">Краткий текст (RU)</label>
                                     <input class="form-control" type="text" id="short_text_ru" name="short_text_ru">
-                                    <label for="long_text_ru" class="col-form-label form-control-label">Длиный текст (RU)</label>
+                                    <label for="long_text_ru" class="col-form-label form-control-label d-block">Длиный текст (RU)</label>
                                     <input class="form-control" type="text" id="long_text_ru" name="long_text_ru">
                                 </div>
                             </div>
@@ -90,27 +89,27 @@
                         <div class="tab-pane fade" id="uz" role="tabpanel" aria-labelledby="uz-tab">
                             <div class="form-group row">
                                 <div class="col-md-12">
-                                    <label for="title_uz" class="col-form-label form-control-label">Заголовок (UZ)</label>
+                                    <label for="title_uz" class="col-form-label form-control-label d-block">Заголовок (UZ)</label>
                                     <input class="form-control" type="text" id="title_uz" name="title_uz">
-                                    <label for="short_text_uz" class="col-form-label form-control-label">Краткий текст (UZ)</label>
+                                    <label for="short_text_uz" class="col-form-label form-control-label d-block">Краткий текст (UZ)</label>
                                     <input class="form-control" type="text" id="short_text_uz" name="short_text_uz">
-                                    <label for="long_text_uz" class="col-form-label form-control-label">Длиный текст (UZ)</label>
+                                    <label for="long_text_uz" class="col-form-label form-control-label d-block">Длиный текст (UZ)</label>
                                     <input class="form-control" type="text" id="long_text_uz" name="long_text_uz">
                                 </div>
                             </div>
-                        </div>                            
+                        </div>
                         <div class="tab-pane fade" id="en" role="tabpanel" aria-labelledby="en-tab">
                             <div class="form-group row">
                                 <div class="col-md-12">
-                                    <label for="title_en" class="col-form-label form-control-label">Заголовок (EN)</label>
+                                    <label for="title_en" class="col-form-label form-control-label d-block">Заголовок (EN)</label>
                                     <input class="form-control" type="text" id="title_en" name="title_en">
-                                    <label for="short_text_en" class="col-form-label form-control-label">Краткий текст (EN)</label>
+                                    <label for="short_text_en" class="col-form-label form-control-label d-block">Краткий текст (EN)</label>
                                     <input class="form-control" type="text" id="short_text_en" name="short_text_en">
-                                    <label for="long_text_en" class="col-form-label form-control-label">Длиный текст (EN)</label>
+                                    <label for="long_text_en" class="col-form-label form-control-label d-block">Длиный текст (EN)</label>
                                     <input class="form-control" type="text" id="long_text_en" name="long_text_en">
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-12">
@@ -134,7 +133,7 @@
 @section('script')
 <script src="{{asset('backend/assets/vendor/datatables.net/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('backend/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('backend/assets/js/crud.js')}}"></script> 
+<script src="{{asset('backend/assets/js/crud.js')}}"></script>
 <script>
   var crud = new Crud({
     filter: true,
@@ -144,7 +143,7 @@
 
     list: {
       url: "{{route('backend.sliders.data')}}",
-      datatable: {            
+      datatable: {
         columns: [
           {data: 'id', name: 'id'},
           {data: 'title_ru', name: 'title_ru'},
@@ -154,7 +153,7 @@
             {
                 targets: 3,
                 data: null,
-                searchable:false, 
+                searchable:false,
                 render: function (row, type, val, meta) {
                     return '<div class="text-right">' +
                     crud.makeButton(val, 'btn-default btn-edit', '<i class="fa fa-pen"></i>', [

@@ -19,10 +19,10 @@
 
         <!-- Argon CSS -->
         <link type="text/css" href="{{asset('backend/assets/css/argon.css')}}" rel="stylesheet">
-        
+
         <!-- Custom CSS -->
         <link rel="stylesheet" href="{{asset('backend/assets/css/custom.css')}}">
-        
+
         @yield('stlye')
 
     </head>
@@ -120,7 +120,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link @if(Request::is('syspanel/branches')) active @endif" href="{{ route('backend.branches.show') }}">
-                                    <i class="fas fa-handshake text-default"></i>
+                                    <i class="fas fa-map-marker-alt text-default"></i>
                                     <span class="nav-link-text text-default">Филиалы</span>
                                 </a>
                             </li>
@@ -252,7 +252,7 @@
                 file_picker_callback : function(callback, value, meta) {
                     var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
                     var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
-                    
+
                     tinymce.activeEditor.windowManager.openUrl({
                         url : '/file-manager/tinymce5',
                         title : 'Laravel File manager',
@@ -263,9 +263,9 @@
                         }
                     })
                 }
-            });  
+            });
         </script>
-        
+
         @yield('script')
         <!-- Argon JS -->
         <script src="{{asset('backend/assets/js/argon.min.js')}}"></script>
@@ -277,7 +277,7 @@
         <!-- Custom JS -->
         <script src="{{asset('backend/assets/js/custom.js')}}"></script>
 
-        
+
         <script>
             $('.notif').on('click', function(e){
                 $('.notif').removeClass('bell');

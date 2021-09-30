@@ -89,24 +89,5 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-xl-12">
-            <div class="card bg-white">
-                <div class="card-header bg-transparent">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <h5 class="h3 text-default mb-0">Количество Заявок</h5>
-                        </div>
-                    </div>
-                </div>
-                {{-- <div class="card-body">
-                    <!-- Chart -->
-                    <div class="chart">
-                        <canvas id="chart-sales" class="chart-canvas"></canvas>
-                    </div>
-                </div> --}}
-            </div>
-        </div>
-    </div>
 </main>
 @endsection

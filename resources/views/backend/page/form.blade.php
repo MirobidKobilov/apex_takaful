@@ -11,7 +11,6 @@
             </nav>
         </div>
     </div>
-    {{-- {{ dd($errors->all()) }} --}}
     <!-- Table -->
     <div class="row">
         <div class="col">
@@ -20,7 +19,6 @@
                 <div class="card-header">
                     <h3 class="mb-0 h2">СТРАНИЦЫ</h3>
                 </div>
-                {{-- {{dd($errors->all())}} --}}
                 <form class="pt-4" action="{{ route('backend.page.postform', ['id' => $id]) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="container">
@@ -64,7 +62,7 @@
                                         <textarea class="form-control js-selector" type="text" id="text_uz" name="text_uz">{{ empty($page) ? old('text_uz') : $page->{'text_uz'} }}</textarea>
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>
                             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                 <div class="form-group row">
                                     <div class="col-md-12">
@@ -78,18 +76,13 @@
                                         <textarea class="form-control js-selector" type="text" id="text_en" name="text_en">{{ empty($page) ? old('text_en') : $page->{'text_en'} }}</textarea>
                                     </div>
                                 </div>
-                            </div>                        
+                            </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-12">
                                 <label for="img" class="col-form-label form-control-label">Изоброжение</label>
                                 <input class="form-control" type="file" id="img" name="img">
                             </div>
-                            {{-- <div class="col-md-6">
-                                <div class="d-flex" style="height: 100%">
-                                    <img src='{{asset('/storage/' . $page->img)}}' height="89px"/>
-                                </div>
-                            </div> --}}
                         </div>
                         <div class="p-4 text-right">
                             <a href="{{ route('backend.page.show') }}" class="btn btn-secondary" data-dismiss="modal">Отменить</a>

@@ -51,32 +51,32 @@
 @section('script')
 <script src="{{asset('backend/assets/vendor/datatables.net/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('backend/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('backend/assets/js/crud.js')}}"></script>  
+<script src="{{asset('backend/assets/js/crud.js')}}"></script>
 <script>
   var crud = new Crud({
     filter: true,
     list: {
       url: "{{route('backend.applications.data')}}",
-      datatable: {            
+      datatable: {
         columns: [
           {data: 'id', name: 'id'},
           {data: 'name', name: 'name'},
           {data: 'phone', name: 'phone'},
           {data: 'type', name: 'type'}
         ],
-        columnDefs: [                    
+        columnDefs: [
             {
                 targets: 4,
                 data: null,
-                searchable:false, 
-                render: function (row, type, val, meta) {                        
+                searchable:false,
+                render: function (row, type, val, meta) {
                     return '<div class="d-flex justify-content-end align-items-center">'
                          + crud.makeButton(val, (val.seen ? 'btn-outline-default' : 'btn-outline-dark') + ' ' + 'read-btn ajax-read', (val.seen ? 'прочитано' : 'не прочитано')
                         )+ crud.makeButton(val, 'btn-danger', '<i class="fa fa-trash"></i>', [
                             ['toggle', 'modal'],
                             ['target', '#removeModal']
                         ]) + '</div>';
-                }                        
+                }
             }
         ]
       }
@@ -86,13 +86,6 @@
       url: "{{ route('backend.applications.delete') }}",
     }
   })
-//   $('body').on('click', '.btn-view', function(e) {
-//         e.preventDefault();
-//         var data = crud.datatable.row($(this).closest('tr')).data();     
-//         $('.js-description').html(data.message)
-//         $("#showModal").modal('show');
-//     })
-
     $(document).on('click', '.ajax-read', function(){
         var data = crud.datatable.row($(this).closest('tr')).data(),
             _ = $(this);
@@ -104,13 +97,12 @@
                 if(data.data.app.seen == 1){
                     _.removeClass('btn-outline-dark').addClass('btn-outline-default');
                     _.html('прочитано');
-                    // _.css('width', '136px');
                 } else{
                     _.addClass('btn-outline-dark').removeClass('btn-outline-default');
                     _.html('не прочитано');
                 }
             }
-            
+
         })
     })
 </script>

@@ -60,26 +60,7 @@
             </div>
             <div class="modal-body">
                 <form action="" id="form" method="POST" enctype="multipart/form-data">
-                    {{-- @csrf --}}
                     <input type="hidden" name="id">
-                    {{-- <div class="form-group row">
-                        <div class="col-md-12">
-                            <label for="title_ru" class="col-form-label form-control-label">Заголовок (RU)</label>
-                            <input class="form-control" type="text" id="title_ru" name="title_ru">
-                        </div> 
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-12">
-                            <label for="title_uz" class="col-form-label form-control-label">Заголовок (UZ)</label>
-                            <input class="form-control" type="text" id="title_uz" name="title_uz">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-12">
-                            <label for="title_en" class="col-form-label form-control-label">Заголовок (EN)</label>
-                            <input class="form-control" type="text" id="title_en" name="title_en">
-                        </div>
-                    </div> --}}
                     <div class="form-group row">
                         <div class="col-md-12">
                             <label for="img" class="col-form-label form-control-label">Изоброжение</label>
@@ -102,7 +83,7 @@
 @section('script')
 <script src="{{asset('backend/assets/vendor/datatables.net/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('backend/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('backend/assets/js/crud.js')}}"></script> 
+<script src="{{asset('backend/assets/js/crud.js')}}"></script>
 <script>
   var crud = new Crud({
     filter: true,
@@ -112,7 +93,7 @@
 
     list: {
       url: "{{route('backend.galleries.data')}}",
-      datatable: {            
+      datatable: {
         columns: [
           {data: 'id', name: 'id'},
           {data: 'img', name: 'img'}
@@ -121,7 +102,7 @@
             {
                 targets: 2,
                 data: null,
-                searchable:false, 
+                searchable:false,
                 render: function (row, type, val, meta) {
                     return '<div class="text-right">' +
                     crud.makeButton(val, 'btn-default btn-edit', '<i class="fa fa-pen"></i>', [
